@@ -5,6 +5,8 @@ class CaesarsController < ApplicationController
   def code
     @input = params[:query]
     @output = encrypt(@input)
+    @output2 = decrypt(@input)
+    @output3 = @output2[22]
     @time = Time.now - Time.parse(params[:start])
     if session[:number]
       session[:number] += 1
